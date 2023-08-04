@@ -1,0 +1,48 @@
+{% extends "webapp/base.html" %} 
+{% load static %}
+
+{% block title %} 
+My Blog 
+
+{% endblock %} 
+
+{% block content %}
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>INICIO</h2>
+          <ol>
+            <li><a href="{% url 'inicio' %}">Home</a></li>
+            
+       
+
+   
+            
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <section class="inner-page">
+      <div class="container">
+      </br>
+        <h1>ALERA ESTA A PUNTO DE BORRAR UN PROVEEDOR !!!</h1>
+    </br>
+      
+        <p>Seguro que quieres borrar este material :  {{ material.descripcion }}</p>
+
+        <form action="" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Borrar">
+            </form>
+  
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  {% endblock %} 

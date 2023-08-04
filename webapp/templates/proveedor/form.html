@@ -1,0 +1,10 @@
+
+<form enctype="application/x-www-form-urlencoded" method="post">
+    {% csrf_token %}
+
+    {% load crispy_forms_tags %}
+
+    {{ formulario | crispy }}
+<br>
+<input type = "submit" value = "Enviar">
+</form>

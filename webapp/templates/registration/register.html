@@ -1,0 +1,52 @@
+{% extends "webapp/base.html" %} 
+{% load static %}
+
+{% block title %} 
+CREAR NUEVO USUARUI
+
+{% endblock %} 
+
+{% block content %}
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>CREAR NUEVO USUARIO</h2>
+          <ol>
+            <li><a href="{% url 'inicio' %}">Home</a></li> 
+            
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <section class="inner-page">
+      <div class="container">
+
+
+    {% include 'registration/form_regist.html' %}
+
+    <div>
+        <br>
+        <p>Your password can’t be too similar to your other personal information.
+            <br>
+            Your password must contain at least 8 characters.
+            <br>
+            Your password can’t be a commonly used password.
+            <br>
+            Your password can’t be entirely numeric. </p> 
+    </div>
+
+
+  
+      </div>
+
+
+    </section>
+
+  </main><!-- End #main -->
+
+  {% endblock %} 

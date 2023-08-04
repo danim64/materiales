@@ -1,0 +1,136 @@
+{% extends "webapp/base.html" %} 
+{% load static %}
+{% load humanize %}
+
+{% block title %} 
+materiales
+
+{% endblock %} 
+
+{% block content %}
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>MATERIALES</h2>
+          <ol>
+            <li><a href="{% url 'inicio' %}">Home</a></li>
+            
+ 
+            
+          </ol>
+
+
+        </div>
+
+      <br/>  
+      <br/>  
+        <div class="container2">
+
+          <form class="form-inline my-2 my-lg-0" action="{% url "listar-materiales" %}">
+            <input class="form-control mr-sm-2" type="search" placeholder="Busqueda" aria-label="Search" name ="search">
+            <br/>  
+        
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Busqueda de Materiales</button> 
+            <a name="" id="" class="btn btn-outline-success my-2 my-sm-0" href="{% url 'crear-material' %}" role="button">Agregar nuevo material</a>
+          </form>
+
+        </div>
+
+        <br/>
+        <br/>
+        
+
+
+        <table class="table table-striped">
+          <thead>
+            <tr>
+            
+              <th scope="col">Descrpcion</th>
+              <th scope="col">Marca</th>
+              <th scope="col">Unidad</th>
+              <th scope="col">Precio</th>
+              <th scope="col">Fecha Precio</th>
+              <th scope="col">Acciones</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            {% for item in paginas.object_list %}
+
+            <tr>
+        
+              <td>{{ item.descripcion }}</td>
+              <td>{{ item.marca.nombre }}</td>
+              <td>{{ item.unidad }}</td>
+              <td>{{ item.precio | intcomma }}</td>
+              <td>{{ item.fecha_precio }}</td>
+              <td> <a name="" id="" class="btn btn-info" href="{% url 'editar-material' item.id %}" role="button">Editar</a> | <a name="" id="" class="btn btn-danger" href="{% url 'eliminar' item.id %}" role="button">Borrar</a></td>
+            </tr>
+
+            
+            {% endfor %}       
+
+            
+
+          </tbody>
+        </table>
+        <div>
+
+
+         
+
+          {% block pagination %}
+          {% if paginas.has_previous %}
+        <a href="{% url 'listar-materiales' %}?page={{1}}">
+            ◀️◀️ </a>
+        <a href="{% url 'listar-materiales' %}?page={{paginas.previous_page_number}}">
+            ◀️ </a>          
+
+          {% if paginas.has_next %}
+          <a href="{% url 'listar-materiales' %}?page={{paginas.next_page_number}}">
+              ▶️</a>
+
+              <a href="{% url 'listar-materiales' %}?page={{paginas.paginator.num_pages}}">
+                ▶️▶️</a>
+
+        {% endif%}
+     
+          {% endif%}
+
+
+          {% for page_number in paginas.paginator.get_elided_page_range %}
+              {% if page_number == paginas.paginator.ELLIPSIS %}
+                  {{page_number}}
+              {% else %}
+                  <a
+                      href="{% url 'listar-materiales' %}?page={{page_number}}"
+                      class="{% if page_number == page_obj.number %}current{% endif %}"
+                  >
+                      {{page_number}}
+                  </a>
+              {% endif %}
+
+              
+          {% endfor %}
+ 
+          {% endblock %}
+    
+        </div>
+      </div>
+
+
+    </section><!-- End Breadcrumbs -->
+
+    <section class="inner-page">
+      <div class="container">
+
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  {% endblock %} 
+

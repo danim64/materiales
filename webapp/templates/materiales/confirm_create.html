@@ -1,0 +1,46 @@
+{% extends "webapp/base.html" %} 
+{% load static %}
+
+{% block title %} 
+My Blog 
+
+{% endblock %} 
+
+{% block content %}
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>INICIO</h2>
+          <ol>
+            <li><a href="{% url 'inicio' %}">Home</a></li>
+            
+       
+
+   
+            
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <section class="inner-page">
+      <div class="container">
+      </br>
+        <h1>ACABAS DE CREAR UN NUEVO  MATERIAL !!!</h1>
+    </br>
+      
+    <a name="" id="" class="btn btn-outline-success my-2 my-sm-0" href="{% url 'listar-materiales' %}" role="button">volver</a>
+    <a name="" id="" class="btn btn-outline-success my-2 my-sm-0" href="{% url 'crear-material' %}" role="button">Agregar nuevo Material</a>
+
+
+  
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  {% endblock %} 

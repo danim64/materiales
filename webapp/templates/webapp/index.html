@@ -1,0 +1,41 @@
+{% extends "webapp/base.html" %} 
+{% load static %}
+
+{% block title %} 
+My Blog 
+
+{% endblock %} 
+
+{% block content %}
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>INICIO</h2>
+          <ol>
+            <li><a href="{% url 'inicio' %}">Home</a></li>
+            
+
+            
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <section class="inner-page">
+      <div class="container">
+          <img src="{% static '/imagenes/logo.png' %}" alt="logo" width="60%" height="60%">
+         <br/>
+         <br/>
+          <p>Esta pagina es una iniciativa para poder actualizar los precios de los materiales para los presupuesto de una manera 
+            mas amigable
+        </p>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  {% endblock %} 

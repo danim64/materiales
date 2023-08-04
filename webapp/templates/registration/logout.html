@@ -1,0 +1,51 @@
+{% extends "webapp/base.html" %} 
+{% load static %}
+
+{% block title %} 
+CREAR MATERIAL
+
+{% endblock %} 
+
+{% block content %}
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>CREAR UNIDAD NUEVA</h2>
+          <ol>
+            <li><a href="{% url 'inicio' %}">Home</a></li> 
+            
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <section class="inner-page">
+      <div class="container">
+        <div class="row my-4">
+            <div class="col-md-6 offset-md-3">
+                <div class="border p-3 bg-white">
+                  {% if request.user.is_authenticated %}
+                  <div style='margin-top:30px;'>
+                      <form method='POST'>{% csrf_token %}
+                          <p>Seguro quieres desloguearte?</p>
+                          <button type='submit'>Si,  Deslogueame.</button>
+                      </form>
+                  </div>
+              {% else %}
+              <p>No estas Logueado. Quieres <a href={% url 'login' %}>Loguearte</a>?</p>
+              {% endif %}
+                  
+
+
+                  </div>
+  
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  {% endblock %} 

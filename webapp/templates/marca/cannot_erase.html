@@ -1,0 +1,45 @@
+{% extends "webapp/base.html" %} 
+{% load static %}
+
+{% block title %} 
+My Blog 
+
+{% endblock %} 
+
+{% block content %}
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>INICIO</h2>
+          <ol>
+            <li><a href="{% url 'inicio' %}">Home</a></li>
+            
+       
+
+   
+            
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <section class="inner-page">
+      <div class="container">
+      </br>
+        <h1>No PUEDES BORRAR ESTE ELEMENTO !!!</h1>
+    </br>
+      
+        <p>AUN OTROS ELEMENTOS DEPENDEN DE EL</p>
+
+
+  
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  {% endblock %} 

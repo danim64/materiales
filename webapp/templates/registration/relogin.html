@@ -1,0 +1,41 @@
+{% extends "webapp/base.html" %} 
+{% load static %}
+
+{% block title %} 
+LOGIN
+{% endblock %} 
+
+{% block content %}
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>RE LOGIN</h2>
+          <ol>
+            <li><a href="{% url 'inicio' %}">Home</a></li> 
+            
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <section class="inner-page">
+      <div class="container">
+        <div class="row my-4">
+            <div class="col-md-6 offset-md-3">
+                <div class="border p-3 bg-white">
+                    <h4>ALERTA! - NO TIENES LOS PERMISOS NECESARIOS !!!</h4>
+                    <hr>
+
+    {% include 'registration/form.html' %}
+
+  
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  {% endblock %} 
